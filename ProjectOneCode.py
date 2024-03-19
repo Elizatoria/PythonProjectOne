@@ -1,6 +1,12 @@
 taken_usernames = ['admin', 'admin123', 'superuser', 'superuser123']  # List of Taken Usernames
 username, password = '', ''  # Varibles to hold the Newly Made Username and Password
 username_input, password_input = '', ''  # Starting Varibles for Input
+
+# Username Test Varibles
+taken_test, lower_test, underscore_test, alpha_num_test = False, False, False, False
+
+#Password Test Varibles
+length_test, space_test, special_test = False, False, False
 uppercase_test, lowercae_test, digit_test = False, False, False  # Initiating the Varibles for the p Loop below
 
 print('''To sign up, create a Username and Password.
