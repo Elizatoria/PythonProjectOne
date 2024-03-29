@@ -3,7 +3,7 @@ username, password = '', ''  # Varibles to hold the Newly Made Username and Pass
 username_input, password_input = '', ''  # Starting Varibles for Input
 
 # Username Test Varibles
-taken_test, lower_test, underscore_test, alpha_num_test = False, False, False, False
+taken_test, lower_test, alnum_underscore_test = False, False, False
 
 #Password Test Varibles
 length_test, space_test, special_test = False, False, False
@@ -26,12 +26,10 @@ while True:
 # Tests for Username
     taken_test = username_input not in taken_usernames  # Test to check if Username is Taken
     lower_test = username_input[0].islower()  # Test to check if first letter is Lowercase Letter
-    underscore_test = ('_' in username_input)  # Test to check if there are any Underscores
-    for u in username_input:
-        alpha_num_test = username_input.isalnum()  # Test to check for Letters and Numbers
+    alnum_underscore_test = username_input.isidentifier()  # Test for Letters, Numbers, and Underscores
 
     # Creation Loop
-    if taken_test and lower_test and (underscore_test or alpha_num_test) == True:  # Test to see if Username meets all Requirements
+    if taken_test and lower_test and alnum_underscore_test == True:  # Test to see if Username meets all Requirements
         username += username_input  # If True, adds Username Input to Username Varible.
         taken_usernames.append(username_input)  # If True, adds Username Input to Taken Usernames.
         print('Username Made Successfully')  # If True, confirms that Username was Created.
